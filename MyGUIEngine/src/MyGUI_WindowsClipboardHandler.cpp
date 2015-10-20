@@ -62,8 +62,8 @@ namespace MyGUI
 	void WindowsClipboardHandler::initialise()
 	{
 		// get executable path
-		char buf[MAX_PATH];
-		GetModuleFileName(0, (LPCH)&buf, MAX_PATH);
+		TCHAR buf[MAX_PATH];
+		GetModuleFileName(0, buf, MAX_PATH);
 		// get module instance
 		HINSTANCE instance = GetModuleHandle(buf);
 

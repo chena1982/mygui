@@ -1,0 +1,32 @@
+set (HEADER_FILES
+  include/MyGUI_EFFDataManager.h
+  include/MyGUI_EFFDiagnostic.h
+  include/MyGUI_EFFPlatform.h
+  include/MyGUI_EFFRTTexture.h
+  include/MyGUI_EFFRenderManager.h
+  include/MyGUI_EFFTexture.h
+  include/MyGUI_EFFVertexBuffer.h
+)
+set (SOURCE_FILES
+  src/MyGUI_EFFDataManager.cpp
+  src/MyGUI_EFFRTTexture.cpp
+  src/MyGUI_EFFRenderManager.cpp
+  src/MyGUI_EFFTexture.cpp
+  src/MyGUI_EFFVertexBuffer.cpp
+)
+SOURCE_GROUP("Header Files" FILES
+  include/MyGUI_EFFDataManager.h
+  include/MyGUI_EFFDiagnostic.h
+  include/MyGUI_EFFPlatform.h
+  include/MyGUI_EFFRTTexture.h
+  include/MyGUI_EFFRenderManager.h
+  include/MyGUI_EFFTexture.h
+  include/MyGUI_EFFVertexBuffer.h
+)
+SOURCE_GROUP("Source Files" FILES
+  src/MyGUI_EFFDataManager.cpp
+  src/MyGUI_EFFRTTexture.cpp
+  src/MyGUI_EFFRenderManager.cpp
+  src/MyGUI_EFFTexture.cpp
+  src/MyGUI_EFFVertexBuffer.cpp
+)

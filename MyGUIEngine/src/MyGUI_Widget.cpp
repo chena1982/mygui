@@ -24,6 +24,8 @@
 #include "MyGUI_RenderManager.h"
 #include "MyGUI_ToolTipManager.h"
 #include "MyGUI_LayoutManager.h"
+#include "MyGUI_SeparatorH.h"
+#include "MyGUI_SeparatorV.h"
 
 namespace MyGUI
 {
@@ -41,7 +43,9 @@ namespace MyGUI
 		mContainer(nullptr),
 		mAlign(Align::Default),
 		mVisible(true),
-		mDepth(0)
+		mDepth(0),
+		mSeparatorH(NULL),
+		mSeparatorV(NULL)
 	{
 	}
 
@@ -149,6 +153,9 @@ namespace MyGUI
 
 		mParent = nullptr;
 		mCroppedParent = nullptr;
+
+		mSeparatorH = NULL;
+		mSeparatorV = NULL;
 	}
 
 	void Widget::changeWidgetSkin(const std::string& _skinName)
@@ -1380,6 +1387,29 @@ namespace MyGUI
 		}
 
 		mWidgetChild.push_back(_widget);
+
+		if (mSeparatorH == NULL)
+		{
+			mSeparatorH = _widget->castType<SeparatorH>(false);
+		}
+
+		if (mSeparatorV == NULL)
+		{
+			mSeparatorV = _widget->castType<SeparatorV>(false);
+		}
+	}
+
+	void Widget::assignSeparator()
+	{
+		if (mSeparatorH != NULL)
+		{
+			mSeparatorH->assignTopBottomPanel();
+		}
+
+		if (mSeparatorV != NULL)
+		{
+			mSeparatorV->assignLeftRightPanel();
+		}
 	}
 
 	void Widget::_updateChilds()

@@ -32,6 +32,8 @@
 #include "MyGUI_TabItem.h"
 #include "MyGUI_Widget.h"
 #include "MyGUI_Window.h"
+#include "MyGUI_SeparatorH.h"
+#include "MyGUI_SeparatorV.h"
 
 #include "MyGUI_BackwardCompatibility.h"
 
@@ -76,6 +78,8 @@ namespace MyGUI
 		factory.registerFactory<TabItem>(mCategoryName);
 		factory.registerFactory<Widget>(mCategoryName);
 		factory.registerFactory<Window>(mCategoryName);
+		factory.registerFactory<SeparatorH>(mCategoryName);
+		factory.registerFactory<SeparatorV>(mCategoryName);
 
 		BackwardCompatibility::registerWidgetTypes();
 

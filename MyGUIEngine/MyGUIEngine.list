@@ -172,6 +172,8 @@ set (HEADER_FILES
   include/MyGUI_WidgetUserData.h
   include/MyGUI_Window.h
   include/MyGUI_XmlDocument.h
+  include/MyGUI_SeparatorH.h
+  include/MyGUI_SeparatorV.h
 )
 set (SOURCE_FILES
   src/MyGUI_ActionController.cpp
@@ -271,6 +273,8 @@ set (SOURCE_FILES
   src/MyGUI_WidgetUserData.cpp
   src/MyGUI_Window.cpp
   src/MyGUI_XmlDocument.cpp
+  src/MyGUI_SeparatorH.cpp
+  src/MyGUI_SeparatorV.cpp
 )
 SOURCE_GROUP("Header Files" FILES
   include/MyGUI_Allocator.h
@@ -480,6 +484,8 @@ SOURCE_GROUP("Header Files\\Widget\\Widget" FILES
   include/MyGUI_TextBox.h
   include/MyGUI_Widget.h
   include/MyGUI_Window.h
+  include/MyGUI_SeparatorH.h
+  include/MyGUI_SeparatorV.h 
 )
 SOURCE_GROUP("Source Files\\Core\\Common" FILES
   src/MyGUI_BackwardCompatibility.cpp
@@ -601,4 +607,6 @@ SOURCE_GROUP("Source Files\\Widget\\Widget" FILES
   src/MyGUI_TextBox.cpp
   src/MyGUI_Widget.cpp
   src/MyGUI_Window.cpp
+  src/MyGUI_SeparatorH.cpp
+  src/MyGUI_SeparatorV.cpp  
 )

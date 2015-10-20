@@ -20,6 +20,8 @@
 
 namespace MyGUI
 {
+	class SeparatorH;
+	class SeparatorV;
 
 	typedef delegates::CMultiDelegate3<Widget*, const std::string&, const std::string&> EventHandle_WidgetStringString;
 
@@ -300,6 +302,8 @@ namespace MyGUI
 		// перерисовывает детей
 		void _updateChilds();
 
+		void assignSeparator();
+
 	protected:
 		// все создание только через фабрику
 		virtual ~Widget();
@@ -416,6 +420,9 @@ namespace MyGUI
 		Align mAlign;
 		bool mVisible;
 		int mDepth;
+
+		SeparatorH* mSeparatorH;
+		SeparatorV* mSeparatorV;
 	};
 
 } // namespace MyGUI

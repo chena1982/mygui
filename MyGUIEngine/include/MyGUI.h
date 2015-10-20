@@ -31,6 +31,8 @@
 #include "MyGUI_Canvas.h"
 #include "MyGUI_MultiListItem.h"
 #include "MyGUI_DeprecatedWidgets.h"
+#include "MyGUI_SeparatorH.h"
+#include "MyGUI_SeparatorV.h"
 
 #include "MyGUI_InputManager.h"
 #include "MyGUI_SubWidgetManager.h"

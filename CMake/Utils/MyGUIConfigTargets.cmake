@@ -163,6 +163,14 @@ function(mygui_app PROJECTNAME SOLUTIONFOLDER)
 			${OPENGL_INCLUDE_DIR}
 		)
 		link_directories(${OPENGL_LIB_DIR})
+	elseif(MYGUI_RENDERSYSTEM EQUAL 8)
+		include_directories(../../Common/Base/EFF)
+		add_definitions("-DMYGUI_EFF_PLATFORM")
+		include_directories(
+			${MYGUI_SOURCE_DIR}/Platforms/EFF/EFFPlatform/include
+			${DirectX_INCLUDE_DIR}
+		)
+		link_directories(${DIRECTX_LIB_DIR})
 	endif()
 	
 	if(MYGUI_SAMPLES_INPUT EQUAL 1)
@@ -308,6 +316,14 @@ function(mygui_dll PROJECTNAME SOLUTIONFOLDER)
 			${OPENGL_INCLUDE_DIR}
 		)
 		link_directories(${OPENGL_LIB_DIR})
+	elseif(MYGUI_RENDERSYSTEM EQUAL 8)
+		include_directories(../../Common/Base/EFF)
+		add_definitions("-DMYGUI_EFF_PLATFORM")
+		include_directories(
+			${MYGUI_SOURCE_DIR}/Platforms/EFF/EFFPlatform/include
+			${DirectX_INCLUDE_DIR}
+		)
+		link_directories(${DIRECTX_LIB_DIR})
 	endif()
 	
 		
@@ -345,6 +361,9 @@ function(mygui_dll PROJECTNAME SOLUTIONFOLDER)
 		target_link_libraries(${PROJECTNAME} MyGUI.OpenGL3Platform)
 		
 		target_link_libraries(${PROJECTNAME} gdiplus)
+	elseif(MYGUI_RENDERSYSTEM EQUAL 8)
+		add_dependencies(${PROJECTNAME} MyGUI.EFFPlatform)
+		target_link_libraries(${PROJECTNAME} MyGUI.EFFPlatform)
 	endif()
 
 	target_link_libraries(${PROJECTNAME}
@@ -411,6 +430,14 @@ function(mygui_tool_dll PROJECTNAME)
 		"../../Common/Precompiled.h"
 		"../../Common/Precompiled.cpp"
 	)
+
+	if(MYGUI_RENDERSYSTEM EQUAL 8)
+		include_directories(
+			D:/EFF/Include
+			D:/EFF/ThirdPartyLib
+		)
+		link_directories(D:/EFF/Lib)
+	endif()
 endfunction(mygui_tool_dll)
 
 

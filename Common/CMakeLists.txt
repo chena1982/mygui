@@ -53,6 +53,8 @@ include_directories(
 	.
 	${MYGUI_SOURCE_DIR}/Common
 	${MYGUI_SOURCE_DIR}/MyGUIEngine/include
+	"D:/EFF/Include"
+	"D:/EFF/ThirdPartyLib"
 )
 
 set (HEADER_FILES "")
@@ -109,6 +111,14 @@ elseif(MYGUI_RENDERSYSTEM EQUAL 7)
 		${OPENGL_INCLUDE_DIR}
 	)
 	link_directories(${OPENGL_LIB_DIR})
+elseif(MYGUI_RENDERSYSTEM EQUAL 8)
+	mygui_add_base_manager_source(EFF)
+	add_definitions("-DMYGUI_EFF_PLATFORM")
+	include_directories(
+		${MYGUI_SOURCE_DIR}/Platforms/EFF/EFFPlatform/include
+		${DirectX_INCLUDE_DIR}
+	)
+	link_directories(${DIRECTX_LIB_DIR})
 endif()
 
 if(MYGUI_SAMPLES_INPUT EQUAL 1)
@@ -145,6 +155,9 @@ elseif(MYGUI_RENDERSYSTEM EQUAL 6)
 elseif(MYGUI_RENDERSYSTEM EQUAL 7)
 	add_dependencies(${PROJECTNAME} MyGUI.OpenGL3Platform)
 	target_link_libraries(${PROJECTNAME} MyGUI.OpenGL3Platform)
+elseif(MYGUI_RENDERSYSTEM EQUAL 8)
+	add_dependencies(${PROJECTNAME} MyGUI.EFFPlatform)
+	target_link_libraries(${PROJECTNAME} MyGUI.EFFPlatform)	
 endif()
 
 add_dependencies(${PROJECTNAME} MyGUIEngine)

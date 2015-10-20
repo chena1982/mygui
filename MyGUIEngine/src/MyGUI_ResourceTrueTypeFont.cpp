@@ -769,7 +769,7 @@ namespace MyGUI
 
 		mTexture = RenderManager::getInstance().createTexture(MyGUI::utility::toString((size_t)this, "_TrueTypeFont"));
 
-		mTexture->createManual(texWidth, texHeight, TextureUsage::Static | TextureUsage::Write, Pixel<LAMode>::getFormat());
+		mTexture->createManual(texWidth, texHeight, TextureUsage::Dynamic | TextureUsage::Write, Pixel<LAMode>::getFormat());
 		mTexture->setInvalidateListener(this);
 
 		uint8* texBuffer = static_cast<uint8*>(mTexture->lock(TextureUsage::Write));
